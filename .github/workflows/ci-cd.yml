@@ -1,4 +1,4 @@
-name: ArtRoom CI CD Docker X Github Actions
+name: PricePilot CI CD Docker X Github Actions
 
 on:
   push:
@@ -29,13 +29,13 @@ jobs:
       - name: 🧱 Build and push backend image
         uses: docker/build-push-action@v6
         with:
-          context: ./server
+          context: ./backend
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/pp-backend:latest
 
       - name: 🧱 Build and push frontend image
         uses: docker/build-push-action@v6
         with: 
-          context: ./client
+          context: ./frontend
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/pp-frontend:latest
